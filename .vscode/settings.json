@@ -2,10 +2,10 @@
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
   "dart.sdkPath": ".fvm/flutter_sdk/bin/cache/dart-sdk",
   "search.exclude": {
-      "**/.fvm": true
+    "**/.fvm": true
   },
   "files.watcherExclude": {
-      "**/.fvm": true
+    "**/.fvm": true
   },
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
@@ -31,4 +31,5 @@
   },
   "github.copilot.editor.enableCodeActions": true,
   "github.copilot.editor.enableAutoCompletions": true,
+  "cSpell.words": ["idobata", "unawaited"]
 }
