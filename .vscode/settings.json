@@ -5,5 +5,24 @@
   },
   "files.watcherExclude": {
       "**/.fvm": true
-  }
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "dart": true,
+    "groovy": true,
+    "java": true,
+    "json": true,
+    "jsonc": true,
+    "kotlin": true,
+    "makefile": true,
+    "markdown": true,
+    "objective-c": true,
+    "plaintext": true,
+    "shellscript": true,
+    "swift": true,
+    "xml": true,
+    "yaml": true
+  },
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.editor.enableAutoCompletions": true,
 }
