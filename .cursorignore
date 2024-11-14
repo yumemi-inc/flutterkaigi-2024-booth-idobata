@@ -1,0 +1,21 @@
+# JetBrains IDE
+./.idea/
+
+# VS Code
+./.vscode/
+
+# macOS
+./macOS/
+
+# Generated files by build_runner
+lib/src/gen/
+*.g.dart
+*.freezed.dart
+
+# Flutter
+./.metadata
+./analysis_options.yaml
+./pubspec.yaml
+
+# Lock files
+*.lock
