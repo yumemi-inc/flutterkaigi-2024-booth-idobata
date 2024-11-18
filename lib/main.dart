@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:idobata/operation_panel/operation_panel_app.dart';
-import 'package:idobata/slide_show/data/slide_window.dart';
+import 'package:idobata/slide_show/framework/slide_window.dart';
 import 'package:idobata/slide_show/slide_show_app.dart';
 import 'package:window_manager_plus/window_manager_plus.dart';
 import 'package:window_size/window_size.dart';
