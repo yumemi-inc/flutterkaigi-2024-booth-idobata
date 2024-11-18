@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:idobata/operation_panel/operation_panel_app.dart';
+import 'package:idobata/slide_show/data/slide_window.dart';
 import 'package:idobata/slide_show/slide_show_app.dart';
 import 'package:window_manager_plus/window_manager_plus.dart';
 import 'package:window_size/window_size.dart';
@@ -22,10 +23,10 @@ Future<void> main(List<String> args) async {
       : int.tryParse(args[0]) ?? _operationPanelAppWindowId;
 
   await WindowManagerPlus.ensureInitialized(windowId);
-  setWindowMinSize(const Size(640, 360));
+  setWindowMinSize(defaultWindowSize);
 
   const windowOptions = WindowOptions(
-    size: Size(640, 360),
+    size: defaultWindowSize,
     center: true,
     alwaysOnTop: true,
     titleBarStyle: TitleBarStyle.hidden,
