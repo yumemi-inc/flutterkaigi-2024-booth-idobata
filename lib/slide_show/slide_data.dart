@@ -1,17 +1,3 @@
-final allSlides = [
-  const VideoData(
-    title: 'テンプレートプロジェクト CM',
-    assetPath: 'assets/commercial.mp4',
-  ),
-  const TalkData(
-    title: 'テンプレートプロジェクトについて',
-    overview: 'テンプレートプロジェクトについて何でもお話します！',
-    talker: 'blendthink',
-    talkerIconAssetPath: 'assets/blendthink.png',
-    talkTimeMinutes: 10,
-  ),
-];
-
 sealed class SlideData {
   const SlideData();
 }

@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:idobata/operation_panel/operation_panel_app.dart';
 import 'package:idobata/slide_show/framework/slide_window.dart';
 import 'package:idobata/slide_show/slide_show_app.dart';
@@ -43,5 +44,9 @@ Future<void> main(List<String> args) async {
     _ => const SlideShowApp(),
   };
 
-  runApp(app);
+  runApp(
+    ProviderScope(
+      child: app,
+    ),
+  );
 }
