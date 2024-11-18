@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:idobata/slide_show/slide_data.dart';
 
 final allSlidesProvider = Provider<List<SlideData>>((ref) {
