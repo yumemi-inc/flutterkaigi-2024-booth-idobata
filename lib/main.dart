@@ -8,7 +8,7 @@ import 'package:idobata/slide_show/slide_show_app.dart';
 import 'package:window_manager_plus/window_manager_plus.dart';
 import 'package:window_size/window_size.dart';
 
-const _slideShowAppWindowId = 0;
+const _operationPanelAppWindowId = 0;
 
 Future<void> main(List<String> args) async {
   if (kIsWeb || !Platform.isMacOS) {
@@ -18,8 +18,8 @@ Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final windowId = args.isEmpty
-      ? _slideShowAppWindowId
-      : int.tryParse(args[0]) ?? _slideShowAppWindowId;
+      ? _operationPanelAppWindowId
+      : int.tryParse(args[0]) ?? _operationPanelAppWindowId;
 
   await WindowManagerPlus.ensureInitialized(windowId);
   setWindowMinSize(const Size(640, 360));
@@ -36,7 +36,7 @@ Future<void> main(List<String> args) async {
   );
 
   final app = switch (windowId) {
-    _slideShowAppWindowId => const OperationPanelApp(),
+    _operationPanelAppWindowId => const OperationPanelApp(),
     _ => const SlideShowApp(),
   };
 
