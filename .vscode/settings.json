@@ -7,6 +7,12 @@
   "files.watcherExclude": {
     "**/.fvm": true
   },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.dart": "$(capture).g.dart, $(capture).freezed.dart",
@@ -31,5 +37,8 @@
   },
   "github.copilot.editor.enableCodeActions": true,
   "github.copilot.editor.enableAutoCompletions": true,
-  "cSpell.words": ["idobata", "unawaited"]
+  "cSpell.words": [
+    "idobata",
+    "unawaited"
+  ]
 }
