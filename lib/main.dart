@@ -27,6 +27,7 @@ Future<void> main(List<String> args) async {
   const windowOptions = WindowOptions(
     size: Size(640, 360),
     center: true,
+    titleBarStyle: TitleBarStyle.hidden,
   );
   unawaited(
     WindowManagerPlus.current.waitUntilReadyToShow(windowOptions, () async {
