@@ -1,9 +1,14 @@
 sealed class SlideData {
-  const SlideData();
+  const SlideData({
+    required this.id,
+  });
+
+  final String id;
 }
 
 final class VideoData extends SlideData {
   const VideoData({
+    required super.id,
     required this.title,
     required this.assetPath,
   });
@@ -14,6 +19,7 @@ final class VideoData extends SlideData {
 
 final class TalkData extends SlideData {
   const TalkData({
+    required super.id,
     required this.title,
     required this.overview,
     required this.talker,
