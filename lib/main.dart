@@ -36,8 +36,8 @@ Future<void> main(List<String> args) async {
   );
 
   final app = switch (windowId) {
-    _slideShowAppWindowId => const SlideShowApp(),
-    _ => const OperationPanelApp(),
+    _slideShowAppWindowId => const OperationPanelApp(),
+    _ => const SlideShowApp(),
   };
 
   runApp(app);
