@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:idobata/data/all_slides_provider.dart';
 import 'package:idobata/data/operation_event.dart';
+import 'package:idobata/data/operation_event_provider.dart';
 import 'package:idobata/slide_show/framework/slide_frame.dart';
 import 'package:idobata/slide_show/screen/talk_slide_screen.dart';
 import 'package:idobata/slide_show/screen/talks_slide_screen.dart';
@@ -23,12 +24,17 @@ class SlideShowApp extends HookConsumerWidget {
     useEffect(
       () {
         final listener = _SlideShowAppListener((eventName, arguments) {
-          print(
-            '[${WindowManagerPlus.current}] Event $eventName with arguments $arguments',
-          );
-          if (eventName == OperationEvent.go.name) {
-            final location = arguments as String;
-            router.go(location);
+          final event = OperationEvent.values.byNameOrNull(eventName);
+          switch (event) {
+            case OperationEvent.go:
+              final location = arguments as String;
+              router.go(location);
+            case OperationEvent.playVideo:
+              ref.read(videoEventProvider.notifier).play();
+            case OperationEvent.pauseVideo:
+              ref.read(videoEventProvider.notifier).pause();
+            case null:
+              break;
           }
         });
         WindowManagerPlus.current.addListener(listener);

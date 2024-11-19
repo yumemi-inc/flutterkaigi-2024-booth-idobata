@@ -1,0 +1,4 @@
+enum VideoEvent {
+  play,
+  pause,
+}
