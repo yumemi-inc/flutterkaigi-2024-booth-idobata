@@ -85,7 +85,7 @@ Page<dynamic> _fadeTransitionPage<T>({
         child: child,
       );
     },
-    transitionDuration: const Duration(milliseconds: 500),
+    transitionDuration: const Duration(milliseconds: 1200),
   );
 }
 
