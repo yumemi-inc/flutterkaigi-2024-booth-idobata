@@ -40,19 +40,23 @@ class _OperationPanel extends HookConsumerWidget {
 
   final int _windowId;
 
+  void _goToSlide(String slidePath) {
+    unawaited(
+      WindowManagerPlus.current.invokeMethodToWindow(
+        _windowId,
+        OperationEvent.go.name,
+        slidePath,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     log('windowId: $_windowId');
     return Center(
       child: TextButton(
         onPressed: () {
-          unawaited(
-            WindowManagerPlus.current.invokeMethodToWindow(
-              _windowId,
-              OperationEvent.go.name,
-              '/970a57d7-d863-41ea-8df6-d42f44b828d6',
-            ),
-          );
+          _goToSlide('/970a57d7-d863-41ea-8df6-d42f44b828d6');
         },
         child: const Text('OperationPanel'),
       ),
