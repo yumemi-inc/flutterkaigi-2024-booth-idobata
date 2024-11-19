@@ -8,6 +8,17 @@ sealed class SlideData {
   String get path => '/$id';
 }
 
+final class TalksData extends SlideData {
+  const TalksData({
+    required super.id,
+    required this.title,
+    required this.talks,
+  });
+
+  final String title;
+  final List<TalkData> talks;
+}
+
 final class VideoData extends SlideData {
   const VideoData({
     required super.id,

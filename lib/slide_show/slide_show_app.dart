@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:idobata/data/all_slides_provider.dart';
 import 'package:idobata/slide_show/framework/slide_frame.dart';
 import 'package:idobata/slide_show/screen/talk_slide_screen.dart';
+import 'package:idobata/slide_show/screen/talks_slide_screen.dart';
 import 'package:idobata/slide_show/screen/video_slide_screen.dart';
 import 'package:idobata/slide_show/slide_data.dart';
 
@@ -32,6 +33,7 @@ final _goRouteProvider = Provider<GoRouter>((ref) {
         final child = switch (slide) {
           VideoData() => VideoSlideScreen(data: slide),
           TalkData() => TalkSlideScreen(data: slide),
+          TalksData() => TalksSlideScreen(talks: slide.talks),
         };
         return _fadeTransitionPage<void>(
           context: context,
