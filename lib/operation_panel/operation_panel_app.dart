@@ -64,7 +64,7 @@ class _OperationPanel extends HookConsumerWidget {
         }
 
         final timer = Timer.periodic(
-          const Duration(seconds: 10),
+          Duration(seconds: selectedSlide.value.slideChangeSeconds),
           (_) {
             final currentIndex = slides.indexOf(selectedSlide.value);
             final nextIndex = (currentIndex + 1) % slides.length;
@@ -76,7 +76,7 @@ class _OperationPanel extends HookConsumerWidget {
 
         return timer.cancel;
       },
-      [enableSlideShow.value],
+      [selectedSlide.value, enableSlideShow.value],
     );
 
     return Center(
