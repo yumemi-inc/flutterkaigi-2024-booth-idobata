@@ -68,13 +68,19 @@ class OperationPanelScreen extends HookConsumerWidget {
               itemBuilder: (context, index) {
                 final slide = slides[index];
                 return ListTile(
-                  leading: slide is TalkData
-                      ? CircleAvatar(
-                          backgroundImage: AssetImage(
-                            slide.talkerImageAssetPath,
-                          ),
-                        )
-                      : const CircleAvatar(child: Icon(Icons.person)),
+                  leading: switch (slide) {
+                    final TalkData talk => CircleAvatar(
+                        backgroundImage: AssetImage(
+                          talk.talkerImageAssetPath,
+                        ),
+                      ),
+                    final TalksData _ => const CircleAvatar(
+                        child: Icon(Icons.groups),
+                      ),
+                    final VideoData _ => const CircleAvatar(
+                        child: Icon(Icons.live_tv),
+                      ),
+                  },
                   title: Text(slide.title),
                   selected: slide == selectedSlide.value,
                   onTap: () => unawaited(_goToSlide(selectedSlide, slide)),
