@@ -40,7 +40,7 @@ class TalksSlideScreen extends HookConsumerWidget {
                   Row(
                     children: [
                       CircleAvatar(
-                        backgroundImage: AssetImage(talk.talkerIconAssetPath),
+                        backgroundImage: AssetImage(talk.talkerImageAssetPath),
                         radius: 16,
                       ),
                       const SizedBox(width: 8),

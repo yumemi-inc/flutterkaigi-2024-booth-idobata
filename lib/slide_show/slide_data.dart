@@ -38,12 +38,12 @@ final class TalkData extends SlideData {
     required super.title,
     required this.overview,
     required this.talker,
-    required this.talkerIconAssetPath,
+    required this.talkerImageAssetPath,
     required this.talkTimeMinutes,
   }) : super(slideChangeSeconds: 6);
 
   final String overview;
   final String talker;
-  final String talkerIconAssetPath;
+  final String talkerImageAssetPath;
   final int talkTimeMinutes;
 }

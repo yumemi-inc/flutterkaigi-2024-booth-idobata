@@ -8,7 +8,7 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
       title: 'テンプレートプロジェクトについて',
       overview: 'テンプレートプロジェクトについて何でもお話します！',
       talker: 'blendthink',
-      talkerIconAssetPath: 'assets/blendthink.png',
+      talkerImageAssetPath: 'assets/blendthink.png',
       talkTimeMinutes: 10,
     ),
     TalkData(
@@ -16,7 +16,7 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
       title: 'melos でのマルチパッケージ構成とか説明',
       overview: 'マルチパッケージ構成でのハマりポイントなど',
       talker: 'blendthink',
-      talkerIconAssetPath: 'assets/blendthink.png',
+      talkerImageAssetPath: 'assets/blendthink.png',
       talkTimeMinutes: 10,
     ),
     TalkData(
@@ -27,7 +27,7 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
 
 先日この制度を利用して昇給した体験を踏まえて、この制度の良いところと課題や今後の機会点について何でも話します。''',
       talker: 'blendthink',
-      talkerIconAssetPath: 'assets/blendthink.png',
+      talkerImageAssetPath: 'assets/blendthink.png',
       talkTimeMinutes: 10,
     ),
   ];

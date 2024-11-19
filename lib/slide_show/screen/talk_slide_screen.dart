@@ -27,7 +27,7 @@ class TalkSlideScreen extends HookConsumerWidget {
         child: Stack(
           children: [
             _BackgroundTalkerImage(
-              talkerIconAssetPath: _data.talkerIconAssetPath,
+              talkerImageAssetPath: _data.talkerImageAssetPath,
             ),
             _TalkContent(
               title: _data.title,
@@ -43,8 +43,8 @@ class TalkSlideScreen extends HookConsumerWidget {
 
 class _BackgroundTalkerImage extends StatelessWidget {
   const _BackgroundTalkerImage({
-    required String talkerIconAssetPath,
-  }) : _talkerImageAssetPath = talkerIconAssetPath;
+    required String talkerImageAssetPath,
+  }) : _talkerImageAssetPath = talkerImageAssetPath;
 
   final String _talkerImageAssetPath;
 
