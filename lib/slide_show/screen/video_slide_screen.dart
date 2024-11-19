@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:idobata/data/operation_event.dart';
 import 'package:idobata/data/operation_event_provider.dart';
 import 'package:idobata/data/video_event.dart';
 import 'package:idobata/slide_show/slide_data.dart';
