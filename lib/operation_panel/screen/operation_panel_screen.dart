@@ -58,15 +58,82 @@ class OperationPanelScreen extends HookConsumerWidget {
       [selectedSlide.value, enableSlideShow.value],
     );
 
-    return Center(
-      child: TextButton(
-        onPressed: () {
-          unawaited(
-            _goToSlide(selectedSlide, slides.last),
-          );
-        },
-        child: const Text('OperationPanel'),
-      ),
+    return Row(
+      children: [
+        Expanded(
+          child: Card(
+            margin: const EdgeInsets.all(16),
+            child: ListView.builder(
+              itemCount: slides.length,
+              itemBuilder: (context, index) {
+                final slide = slides[index];
+                return ListTile(
+                  leading: slide is TalkData
+                      ? CircleAvatar(
+                          backgroundImage: AssetImage(
+                            slide.talkerImageAssetPath,
+                          ),
+                        )
+                      : const CircleAvatar(child: Icon(Icons.person)),
+                  title: Text(slide.title),
+                  selected: slide == selectedSlide.value,
+                  onTap: () => unawaited(_goToSlide(selectedSlide, slide)),
+                );
+              },
+            ),
+          ),
+        ),
+        Expanded(
+          child: Card(
+            margin: const EdgeInsets.all(16),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SwitchListTile(
+                    title: const Text('スライドショー'),
+                    value: enableSlideShow.value,
+                    onChanged: (value) => enableSlideShow.value = value,
+                  ),
+                  const SizedBox(height: 32),
+                  if (selectedSlide.value is VideoData) ...[
+                    const Text('動画コントロール'),
+                    const SizedBox(height: 16),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.play_arrow),
+                          onPressed: () {
+                            unawaited(
+                              WindowManagerPlus.current.invokeMethodToWindow(
+                                _windowId,
+                                OperationEvent.playVideo.name,
+                              ),
+                            );
+                          },
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.pause),
+                          onPressed: () {
+                            unawaited(
+                              WindowManagerPlus.current.invokeMethodToWindow(
+                                _windowId,
+                                OperationEvent.pauseVideo.name,
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

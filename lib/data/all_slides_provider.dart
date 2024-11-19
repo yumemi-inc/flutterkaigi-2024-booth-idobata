@@ -30,6 +30,14 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
       talkerImageAssetPath: 'assets/blendthink.png',
       talkTimeMinutes: 10,
     ),
+    TalkData(
+      id: 'fa0f5d52-30b3-4ead-a782-5eb7c5452e12',
+      title: 'テストテスト',
+      overview: '''先日この制度を利用して昇給した体験を踏まえて、この制度の良いところと課題や今後の機会点について何でも話します。''',
+      talker: 'blendthink',
+      talkerImageAssetPath: 'assets/blendthink.png',
+      talkTimeMinutes: 10,
+    ),
   ];
 
   return const [
