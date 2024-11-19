@@ -27,7 +27,7 @@ final _goRouteProvider = Provider<GoRouter>((ref) {
   final slides = ref.watch(allSlidesProvider);
   final routes = slides.map(
     (slide) => GoRoute(
-      path: '/${slide.id}',
+      path: slide.path,
       pageBuilder: (context, state) {
         final child = switch (slide) {
           VideoData() => VideoSlideScreen(data: slide),
@@ -42,7 +42,7 @@ final _goRouteProvider = Provider<GoRouter>((ref) {
     ),
   );
   return GoRouter(
-    initialLocation: '/${slides.first.id}',
+    initialLocation: slides.first.path,
     routes: routes.toList(),
   );
 });

@@ -4,6 +4,8 @@ sealed class SlideData {
   });
 
   final String id;
+
+  String get path => '/$id';
 }
 
 final class VideoData extends SlideData {
