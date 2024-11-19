@@ -112,6 +112,7 @@ class OperationPanelScreen extends HookConsumerWidget {
                         IconButton(
                           icon: const Icon(Icons.play_arrow),
                           onPressed: () {
+                            enableSlideShow.value = false;
                             unawaited(
                               WindowManagerPlus.current.invokeMethodToWindow(
                                 _windowId,
@@ -123,6 +124,7 @@ class OperationPanelScreen extends HookConsumerWidget {
                         IconButton(
                           icon: const Icon(Icons.pause),
                           onPressed: () {
+                            enableSlideShow.value = false;
                             unawaited(
                               WindowManagerPlus.current.invokeMethodToWindow(
                                 _windowId,
