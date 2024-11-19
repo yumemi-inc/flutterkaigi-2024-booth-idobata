@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:idobata/data/operation_event.dart';
 import 'package:window_manager_plus/window_manager_plus.dart';
 
 class OperationPanelApp extends HookWidget {
@@ -41,6 +43,19 @@ class _OperationPanel extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     log('windowId: $_windowId');
-    return const Text('OperationPanel');
+    return Center(
+      child: TextButton(
+        onPressed: () {
+          unawaited(
+            WindowManagerPlus.current.invokeMethodToWindow(
+              _windowId,
+              OperationEvent.go.name,
+              '/970a57d7-d863-41ea-8df6-d42f44b828d6',
+            ),
+          );
+        },
+        child: const Text('OperationPanel'),
+      ),
+    );
   }
 }
