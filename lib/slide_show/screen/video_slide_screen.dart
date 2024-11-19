@@ -32,9 +32,11 @@ class VideoSlideScreen extends HookConsumerWidget {
 
         WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
           await controller.initialize();
+          unawaited(controller.play());
         });
-        return () {
+        return () async {
           controller.removeListener(listener);
+          await controller.pause();
           unawaited(controller.dispose());
         };
       },
@@ -48,16 +50,6 @@ class VideoSlideScreen extends HookConsumerWidget {
                 child: VideoPlayer(controller),
               )
             : const CircularProgressIndicator(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          isPlaying.value
-              ? unawaited(controller.pause())
-              : unawaited(controller.play());
-        },
-        child: Icon(
-          isPlaying.value ? Icons.pause : Icons.play_arrow,
-        ),
       ),
     );
   }
