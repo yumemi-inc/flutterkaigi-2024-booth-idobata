@@ -36,19 +36,24 @@ class OperationPanelApp extends HookWidget {
   }
 }
 
+late Timer? _timer;
+
 class _OperationPanel extends HookConsumerWidget {
   const _OperationPanel({required int windowId}) : _windowId = windowId;
 
   final int _windowId;
 
-  void _goToSlide(String slidePath) {
-    unawaited(
-      WindowManagerPlus.current.invokeMethodToWindow(
-        _windowId,
-        OperationEvent.go.name,
-        slidePath,
-      ),
+  Future<void> _goToSlide(
+    ValueNotifier<SlideData> selectedSlide,
+    SlideData slide,
+  ) async {
+    _timer?.cancel();
+    await WindowManagerPlus.current.invokeMethodToWindow(
+      _windowId,
+      OperationEvent.go.name,
+      slide.path,
     );
+    selectedSlide.value = slide;
   }
 
   @override
@@ -63,18 +68,19 @@ class _OperationPanel extends HookConsumerWidget {
           return null;
         }
 
-        final timer = Timer.periodic(
+        _timer = Timer.periodic(
           Duration(seconds: selectedSlide.value.slideChangeSeconds),
           (_) {
             final currentIndex = slides.indexOf(selectedSlide.value);
             final nextIndex = (currentIndex + 1) % slides.length;
             final nextSlide = slides[nextIndex];
-            selectedSlide.value = nextSlide;
-            _goToSlide(nextSlide.path);
+            unawaited(
+              _goToSlide(selectedSlide, nextSlide),
+            );
           },
         );
 
-        return timer.cancel;
+        return _timer?.cancel;
       },
       [selectedSlide.value, enableSlideShow.value],
     );
@@ -82,7 +88,9 @@ class _OperationPanel extends HookConsumerWidget {
     return Center(
       child: TextButton(
         onPressed: () {
-          _goToSlide('/970a57d7-d863-41ea-8df6-d42f44b828d6');
+          unawaited(
+            _goToSlide(selectedSlide, slides.last),
+          );
         },
         child: const Text('OperationPanel'),
       ),
