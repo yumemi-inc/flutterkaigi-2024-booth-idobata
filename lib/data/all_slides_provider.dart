@@ -1,9 +1,12 @@
+import 'dart:math';
+
+import 'package:collection/collection.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:idobata/slide_show/slide_data.dart';
 
 final allSlidesProvider = Provider<List<SlideData>>((ref) {
-  const talks = [
-    TalkData(
+  final talks = [
+    const TalkData(
       id: 'd6ad29e7-0931-464e-85fd-da01c3caa79a',
       title: 'ゆめみの給与自己決定制度について実体験を基にせきららに話します。',
       overview: '''
@@ -14,7 +17,7 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
       talkerImageAssetPath: 'assets/kamashi.png',
       talkTimeMinutes: 10,
     ),
-    TalkData(
+    const TalkData(
       id: 'ecbd2f12-6684-412f-80fc-bbc689e25894',
       title: 'リードエンジニアの業務は割に合う？このポジションで働くことで得られるものは何？',
       overview: '''
@@ -25,7 +28,7 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
       talkerImageAssetPath: 'assets/kamashi.png',
       talkTimeMinutes: 10,
     ),
-    TalkData(
+    const TalkData(
       id: '7b9d3b27-c775-4fdd-b0cc-44c225d54268',
       title: '【Flutter CI/CD情報局】「わからないのでお聞かせください」',
       overview: '''
@@ -35,7 +38,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/yamapan.png',
       talkTimeMinutes: 5,
     ),
-    TalkData(
+    const TalkData(
       id: 'fa0f5d52-30b3-4ead-a782-5eb7c5452e12',
       title: 'Flutter アプリ開発で生成AIを使うためには',
       overview:
@@ -44,7 +47,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/json.png',
       talkTimeMinutes: 5,
     ),
-    TalkData(
+    const TalkData(
       id: 'ad86e778-22e9-4cad-bf1d-da790ab69d80',
       title: 'ゆめみのテンプレートプロジェクトのプロジェクト構造について',
       overview:
@@ -53,7 +56,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/blendthink.png',
       talkTimeMinutes: 10,
     ),
-    TalkData(
+    const TalkData(
       id: '97035ca2-1826-4e02-8081-bfe26064f318',
       title: 'ゆめみのテンプレートプロジェクトのプロジェクト構造について',
       overview:
@@ -62,7 +65,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/tatsutakein.png',
       talkTimeMinutes: 10,
     ),
-    TalkData(
+    const TalkData(
       id: '3c84f5e3-19c4-4abd-ad5f-45d14ce935a8',
       title: 'Melos の便利なところ',
       overview:
@@ -71,7 +74,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/blendthink.png',
       talkTimeMinutes: 5,
     ),
-    TalkData(
+    const TalkData(
       id: '3847e6be-848f-45a2-bb8a-2d9b62f6b0ec',
       title: 'Melos の便利なところ',
       overview:
@@ -80,7 +83,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/tatsutakein.png',
       talkTimeMinutes: 5,
     ),
-    TalkData(
+    const TalkData(
       id: '3cc58d43-9a6c-4c77-ad58-a1092d93224b',
       title: '子育てエンジニアから見たゆめみってどう？',
       overview:
@@ -89,7 +92,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/akatsuki.png',
       talkTimeMinutes: 5,
     ),
-    TalkData(
+    const TalkData(
       id: '9c1331a7-5347-4fdf-a050-965e0aaa72c2',
       title: 'ゆめみと勉強会一緒にやりたい会社さんいますか？？',
       overview:
@@ -98,7 +101,7 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/akatsuki.png',
       talkTimeMinutes: 10,
     ),
-    TalkData(
+    const TalkData(
       id: '0d2775b0-fbe2-42c2-aa92-3bad2ef9d77d',
       title: 'Flutterチームのことも気になるけど、Android/iOSチームのことも気になる人集合',
       overview: '''
@@ -109,15 +112,20 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkTimeMinutes: 5,
     ),
   ];
-
-  return const [
-    TalksData(
-      id: '44cc9f37-de10-4476-b458-cddb8939644b',
-      title: 'トーク一覧',
-      talks: talks,
+  talks.shuffle(Random());
+  final talkGroups = talks.slices(4);
+  final talksData = talkGroups.mapIndexed(
+    (index, group) => TalksData(
+      id: '44cc9f37-de10-4476-b458-cddb8939644b-${index + 1}',
+      title: 'トーク一覧 ${index + 1}',
+      talks: group,
     ),
+  );
+
+  return [
+    ...talksData,
     ...talks,
-    VideoData(
+    const VideoData(
       id: '970a57d7-d863-41ea-8df6-d42f44b828d6',
       title: 'テンプレートプロジェクト CM',
       assetPath: 'assets/commercial.mp4',
