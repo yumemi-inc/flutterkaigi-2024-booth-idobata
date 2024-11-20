@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:idobata/data/all_slides_provider.dart';
 import 'package:idobata/data/operation_event.dart';
-import 'package:idobata/data/operation_event_provider.dart';
+import 'package:idobata/data/video_event_provider.dart';
 import 'package:idobata/slide_show/framework/slide_frame.dart';
 import 'package:idobata/slide_show/screen/talk_slide_screen.dart';
 import 'package:idobata/slide_show/screen/talks_slide_screen.dart';
