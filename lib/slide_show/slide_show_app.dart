@@ -45,6 +45,7 @@ class SlideShowApp extends HookConsumerWidget {
 
     return MaterialApp.router(
       routerConfig: router,
+      theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       builder: (context, child) => SlideFrame(child: child!),
     );
