@@ -27,7 +27,7 @@ final class VideoData extends SlideData {
     required super.id,
     required super.title,
     required this.assetPath,
-  }) : super(slideChangeSeconds: 38);
+  }) : super(slideChangeSeconds: 36);
 
   final String assetPath;
 }
@@ -40,7 +40,7 @@ final class TalkData extends SlideData {
     required this.talker,
     required this.talkerImageAssetPath,
     required this.talkTimeMinutes,
-  }) : super(slideChangeSeconds: 6);
+  }) : super(slideChangeSeconds: 14);
 
   final String overview;
   final String talker;
