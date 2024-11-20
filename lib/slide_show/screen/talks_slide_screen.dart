@@ -13,6 +13,7 @@ class TalksSlideScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade900,
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: GridView.builder(
