@@ -53,6 +53,61 @@ FlutterのCI/CDをあまり知らないので、手法や気をつけるべき�
       talkerImageAssetPath: 'assets/blendthink.png',
       talkTimeMinutes: 10,
     ),
+    TalkData(
+      id: '97035ca2-1826-4e02-8081-bfe26064f318',
+      title: 'ゆめみのテンプレートプロジェクトのプロジェクト構造について',
+      overview:
+          '''テンプレートプロジェクトではマルチパッケージ構成にしているのですが、ディレクトリ構造やパッケージごとの依存関係がどうなっているのかを詳しくお話しします！''',
+      talker: 'たっつー',
+      talkerImageAssetPath: 'assets/tatsutakein.png',
+      talkTimeMinutes: 10,
+    ),
+    TalkData(
+      id: '3c84f5e3-19c4-4abd-ad5f-45d14ce935a8',
+      title: 'Melos の便利なところ',
+      overview:
+          '''Melos でのマルチパッケージ管理のメリットを紹介。SDK バージョンの統一管理、一括コマンド実行、フック機能による自動化など、効率的な開発環境構築方法について解説します。''',
+      talker: 'おかやまん',
+      talkerImageAssetPath: 'assets/blendthink.png',
+      talkTimeMinutes: 5,
+    ),
+    TalkData(
+      id: '3847e6be-848f-45a2-bb8a-2d9b62f6b0ec',
+      title: 'Melos の便利なところ',
+      overview:
+          '''Melos でのマルチパッケージ管理のメリットを紹介。SDK バージョンの統一管理、一括コマンド実行、フック機能による自動化など、効率的な開発環境構築方法について解説します。''',
+      talker: 'たっつー',
+      talkerImageAssetPath: 'assets/tatsutakein.png',
+      talkTimeMinutes: 5,
+    ),
+    TalkData(
+      id: '3cc58d43-9a6c-4c77-ad58-a1092d93224b',
+      title: '子育てエンジニアから見たゆめみってどう？',
+      overview:
+          '''仕事と育児を両立できるかどうかは会社の環境や文化にもよりますよね。ということで、育児関連のゆめみの制度などについて、2児の母から話します。単に育児関連の雑談もどうぞ。''',
+      talker: 'あかつき',
+      talkerImageAssetPath: 'assets/akatsuki.png',
+      talkTimeMinutes: 5,
+    ),
+    TalkData(
+      id: '9c1331a7-5347-4fdf-a050-965e0aaa72c2',
+      title: 'ゆめみと勉強会一緒にやりたい会社さんいますか？？',
+      overview:
+          '''ゆめみではconnpassで募集するようなオープンな勉強会から、外部に公開しないクローズドな勉強会まで、今まで多くの会社さんと勉強会を開催してきました。そこのあなたの会社ともぜひ一緒に勉強会しませんか？？Flutterでも、それ以外の勉強会でもOKです。ちょっと企画の相談をしてみませんか？''',
+      talker: 'あかつき',
+      talkerImageAssetPath: 'assets/akatsuki.png',
+      talkTimeMinutes: 10,
+    ),
+    TalkData(
+      id: '0d2775b0-fbe2-42c2-aa92-3bad2ef9d77d',
+      title: 'Flutterチームのことも気になるけど、Android/iOSチームのことも気になる人集合',
+      overview: '''
+実はFlutterエンジニアではない方、FlutterエンジニアだけどAndroid/iOSも気になる方どうぞいらっしゃい。
+所属はFlutter/Android、案件はAndroid/iOSな私がチームの雰囲気や特徴などを知っている範囲でお伝えします。''',
+      talker: 'あかつき',
+      talkerImageAssetPath: 'assets/akatsuki.png',
+      talkTimeMinutes: 5,
+    ),
   ];
 
   return const [
