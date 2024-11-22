@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:idobata/slide_show/framework/slide_frame_query.dart';
 import 'package:idobata/slide_show/slide_data.dart';
 
 class TalksSlideScreen extends HookConsumerWidget {
@@ -12,6 +13,7 @@ class TalksSlideScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final scale = context.frameScale;
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
       body: Padding(
@@ -44,9 +46,9 @@ class TalksSlideScreen extends HookConsumerWidget {
                         CircleAvatar(
                           backgroundImage:
                               AssetImage(talk.talkerImageAssetPath),
-                          radius: 16,
+                          radius: 16 * scale,
                         ),
-                        const SizedBox(width: 8),
+                        SizedBox(width: 8 * scale),
                         Expanded(
                           child: Text(
                             talk.talker,

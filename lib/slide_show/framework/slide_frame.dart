@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:idobata/slide_show/framework/slide_frame_query.dart';
+import 'package:idobata/slide_show/framework/slide_window.dart';
 
 class SlideFrame extends StatelessWidget {
   const SlideFrame({
@@ -19,7 +20,9 @@ class SlideFrame extends StatelessWidget {
           builder: (context, constraints) {
             final frameHeight = constraints.maxHeight;
             return SlideFrameQuery(
-              frameHeight: frameHeight,
+              frameHeight: frameHeight > defaultWindowSize.height
+                  ? frameHeight
+                  : defaultWindowSize.height,
               child: _SlideFrameContent(
                 child: _child,
               ),
