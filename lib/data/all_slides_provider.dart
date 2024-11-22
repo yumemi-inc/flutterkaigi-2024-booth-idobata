@@ -29,6 +29,24 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
       talkTimeMinutes: 10,
     ),
     const TalkData(
+      id: '7b9d3b27-c775-4fdd-b0cc-44c225d54268',
+      title: 'トランポリンで運動不足解消しませんか 🙌',
+      overview: '''
+運動不足解消で行き始めたトランポリンにハマっているので語ります。''',
+      talker: 'たっつー',
+      talkerImageAssetPath: 'assets/tatsutakein.png',
+      talkTimeMinutes: 5,
+    ),
+    const TalkData(
+      id: '5d4a1f93-4777-dcbd-bf68-2b124f799e1b',
+      title: '保護猫をお迎えするので猫トークしませんか 🐈',
+      overview: '''
+次の日曜日から保護猫をお迎えする予定です！猫トークしましょう〜 🐈''',
+      talker: 'たっつー',
+      talkerImageAssetPath: 'assets/tatsutakein.png',
+      talkTimeMinutes: 5,
+    ),
+    const TalkData(
       id: 'fa0f5d52-30b3-4ead-a782-5eb7c5452e12',
       title: 'Flutter アプリ開発で生成AIを使うためには',
       overview:
