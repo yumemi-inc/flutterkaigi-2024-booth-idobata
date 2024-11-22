@@ -29,16 +29,6 @@ final allSlidesProvider = Provider<List<SlideData>>((ref) {
       talkTimeMinutes: 10,
     ),
     const TalkData(
-      id: '7b9d3b27-c775-4fdd-b0cc-44c225d54268',
-      title: '【Flutter CI/CD情報局】「わからないのでお聞かせください」',
-      overview: '''
-FlutterのCI/CDをあまり知らないので、手法や気をつけるべきことなど教えてください！
-聞いた内容を蓄積していって次に訪れた方に共有します。''',
-      talker: 'やまぱん',
-      talkerImageAssetPath: 'assets/yamapan.png',
-      talkTimeMinutes: 5,
-    ),
-    const TalkData(
       id: 'fa0f5d52-30b3-4ead-a782-5eb7c5452e12',
       title: 'Flutter アプリ開発で生成AIを使うためには',
       overview:
